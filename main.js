@@ -4412,7 +4412,7 @@ function file_video(path) {
   var file_name = decodeURIComponent(path.trim("/").split("/").slice(-1)[0].replaceAll("%5C%5C", "%5C"));
   let player_items = [
     { text: "Microsoft Edge", href: `microsoft-edge:${url}?a=view` },
-//  { text: "MPC-HC", href: `mpchc://${url}` },
+    { text: "MPC-HC", href: `mpc://${url}` },
 //  { text: "VLC", href: `vlc://${url}` },
     { text: "PotPlayer", href: `potplayer://${url}` },
     { text: "nPlayer", href: `nplayer:${url}` },
@@ -4453,13 +4453,14 @@ function file_video(path) {
   const dp = new DPlayer({
     container: document.getElementById("dplayer"),
     autoplay: false,
-	theme: '#7493C1',
-	loop: true,
-    screenshot: false,
-    preload: "auto",
-	hotkey: true,
-	volume: 0.3,
-	mutex: true,
+    lang: "en",
+    theme: '#76C174',
+    loop: false,
+    volume: 0.3,
+    mutex: true,
+    screenshot: true,
+    preload: "none",
+    hotkey: true,
     video: {
       quality: [{ url: url, type: "normal" }],
       autoplay: false,
